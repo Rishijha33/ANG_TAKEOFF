@@ -1,0 +1,47 @@
+<div class="container">
+    <form [formGroup] = "userForm">
+    <div class="form-group">
+    <label for = "title" class="form-control form-control-lg">Title :
+        <select   name="title"  formControlName = "title">
+            <option value="Mr">Mr.</option>
+            <option value="Ms">Ms.</option>
+        </select>
+    </label>
+    </div>
+
+    <div class="form-group">
+    <label  class="form-control form-control-lg"> First Name
+    <input type="text" name="" id="" fromControlName = "firstName">
+    </label>
+    </div>
+
+    <div class="form-group">
+     <label  class="form-control form-control-lg"> Last Name
+     <input type="text" name="" id="" fromControlName = "lastName">
+     </label>
+     </div>    
+
+     <div class="form-group">
+         <label  class="form-control form-control-lg"> Email
+             <input type="email" formControlName = "email" >
+         </label>
+     </div>
+
+
+
+     <div class="form-group" >
+        <label  class="form-control form-control-lg"> Password  
+            <input type="password" formControlName = "password">
+        </label>
+     </div>
+
+     <!-- <div>
+         <label  class="form-control form-control-lg ">Date Of Birth
+             <input type="date" formControlName = "dob">
+         </label>
+     </div> -->
+
+</form>
+</div>
+
+<button class="btn btn-primary"  type="submit">Submit</button>
