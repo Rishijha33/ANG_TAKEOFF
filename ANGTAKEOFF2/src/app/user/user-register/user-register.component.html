@@ -1,47 +1,55 @@
 <div class="container">
-    <form [formGroup] = "userForm">
-    <div class="form-group">
-    <label for = "title" class="form-control form-control-lg">Title :
-        <select   name="title"  formControlName = "title">
-            <option value="Mr">Mr.</option>
-            <option value="Ms">Ms.</option>
-        </select>
-    </label>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <br>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <select   name="title"  formControlName = "title">
+                <option value="Mr">Mr.</option>
+                <option value="Ms">Ms.</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input formControlName="firstName" type="text" class="form-control" id="firstName" placeholder="firstName"/>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="lastName"/>
+        </div>
+        <br>
+   
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" class="form-control" id="economicSeats" placeholder="EconomicSeats"/>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">password</label>
+            <input formControlName="password" type="password" class="form-control" id="businessSeats" placeholder="BusinessSeats"/>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input formControlName="phoneNumber" type="number" class="form-control" id="economyCost" placeholder="EconomyCost"/>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="dob">Date Of Birth</label>
+            <input formControlName="dob" type="date" class="form-control" id="businessCost" placeholder="BusinessCost"/>
+        </div>
+        <br>
+
+
+        <button class="btn btn-success">SUBMIT</button>
+    </form>
     </div>
 
-    <div class="form-group">
-    <label  class="form-control form-control-lg"> First Name
-    <input type="text" name="" id="" fromControlName = "firstName">
-    </label>
-    </div>
-
-    <div class="form-group">
-     <label  class="form-control form-control-lg"> Last Name
-     <input type="text" name="" id="" fromControlName = "lastName">
-     </label>
-     </div>    
-
-     <div class="form-group">
-         <label  class="form-control form-control-lg"> Email
-             <input type="email" formControlName = "email" >
-         </label>
-     </div>
 
 
 
-     <div class="form-group" >
-        <label  class="form-control form-control-lg"> Password  
-            <input type="password" formControlName = "password">
-        </label>
-     </div>
 
-     <!-- <div>
-         <label  class="form-control form-control-lg ">Date Of Birth
-             <input type="date" formControlName = "dob">
-         </label>
-     </div> -->
 
-</form>
-</div>
 
-<button class="btn btn-primary"  type="submit">Submit</button>
+

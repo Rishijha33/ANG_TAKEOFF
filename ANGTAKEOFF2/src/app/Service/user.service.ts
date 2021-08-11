@@ -19,5 +19,6 @@ export class UserService {
     console.log(this.http.post(`${this.baseUrl}`+'/addnewuser', User));
     
     return this.http.post(`${this.baseUrl}`+'/addnewuser', User);
+   // return this.http.post("http://localhost:8090/api/v1/addFlight", flight)
    }
 }

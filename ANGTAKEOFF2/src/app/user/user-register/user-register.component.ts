@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { UserService } from 'src/app/Service/user.service';
@@ -16,36 +16,36 @@ export class UserRegisterComponent implements OnInit {
   userForm: FormGroup;
   
   
-  constructor(private userService:UserService, private formBuilder: FormBuilder, router:Router) { }
+  constructor(private userService:UserService, private formBuilder: FormBuilder, private router:Router) { }
 
 
 
   ngOnInit() {
     this.userForm = this.formBuilder.group({
-      title:[''],
-      firstName: [''],
-      lastName: [''],
-      password: [''],
-      email: [''],
+      title:['',Validators.required],
+      firstName: ['',Validators.required],
+      lastName: ['',Validators.required],
+      password: ['',Validators.required],
+      email: ['',Validators.required],
+      phoneNumber:['',Validators.required],
+      dob:['',Validators.required]
       
-  });
-
+      
+  }
+  );
 }
 
-onSubmit(){
-  this.submitted = true;
-  if(this.userForm.invalid)
-  {
+// submitting the form reset nhi ho rha
+onSubmit() {
+  console.log("SUBMIT");
+  if (this.userForm.invalid) {
     return;
   }
-
-  this.userService.createUser(this.userForm.value).subscribe((data:any)=>
-  {
-    this.user = data;
-  }
-  )
+  this.userService.createUser(this.userForm.value).subscribe(data => {
+   this.userForm.reset();
+    this.router.navigate(['userLogin']);
+  });
 }
-
 
 }
 
