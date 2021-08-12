@@ -1,2 +1,22 @@
-<p>user-dashboard works!</p>
-<p>Vinit here!</p>
+<mat-toolbar color="primary" class="mat-elevation-z6">
+   <span><mat-icon>flight_takeoff</mat-icon> Take OFF </span>
+   <div class="spacer"></div>
+   <a>
+       <span>Hi UserId</span>
+    <mat-icon>waving_hand</mat-icon>
+   </a>
+   <a mat-fab routerLink="userLogin">
+       <mat-icon>search</mat-icon>
+    </a>
+    <span>Search Flights</span>
+   <a mat-fab routerLink="userLogin">
+    <mat-icon>preview</mat-icon>   
+    </a>
+    <span>View Bookings</span>
+   <a mat-raised-button color="accent" routerLink="userLogin">
+    <mat-icon>logout</mat-icon> 
+    Logout
+    </a> 
+</mat-toolbar>
+
+

@@ -11,6 +11,10 @@ import { UserService } from './Service/user.service';
 import { Router } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
