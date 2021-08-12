@@ -42,10 +42,17 @@ onSubmit() {
     return;
   }
   this.userService.createUser(this.userForm.value).subscribe(data => {
-   this.userForm.reset();
-    this.router.navigate(['userLogin']);
+   this.userForm.reset()
+    this.router.navigate(['userLogin'])
   });
 }
+
+public goBack()
+{
+  console.log("inside go back");
+  this.router.navigate(['/userLogin']);
+}
+
 
 }
 

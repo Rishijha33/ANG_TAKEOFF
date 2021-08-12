@@ -1,2 +1,18 @@
-<p>user-login works!</p>
+
+<div class="container mt-6">
+    <div class="row">
+        <div class="col-7 mb-3">
+            <label for="email">Email address:</label>
+            <input class="form-control" type="String" [(ngModel)]="email">
+            <label for="password">Password:</label>
+            <input class="form-control" type="String" [(ngModel)]="password">
+        </div>
+    </div>
+</div>
+
+<div  class= "container mt-1">
+    <button class="btn btn-secondary "  (click)="loginUser()">LOGIN</button>
+
+    <button class="btn btn-success "  (click)="loginUser()">SIGN UP</button>
+</div>  
 
