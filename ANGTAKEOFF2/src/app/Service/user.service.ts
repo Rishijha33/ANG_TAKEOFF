@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { EmailValidator } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { User } from '../user/User';
 
@@ -7,6 +8,7 @@ import { User } from '../user/User';
   providedIn: 'root'
 })
 export class UserService {
+ 
   private baseUrl = "http://localhost:8090/api/v1";
   constructor(private http:HttpClient) { }
 
@@ -24,6 +26,7 @@ export class UserService {
 
    loginUser(email:String, password:String)
    {
+     
      console.log(this.http.get("http://localhost:8090/api/v1/users/"+email+"/"+password));
      return this.http.get("http://localhost:8090/api/v1/users/"+email+"/"+password);
    }

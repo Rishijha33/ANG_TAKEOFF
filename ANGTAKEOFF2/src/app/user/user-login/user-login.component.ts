@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/Service/user.service';
+import { User } from '../User';
 
 @Component({
   selector: 'app-user-login',
@@ -8,9 +9,11 @@ import { UserService } from 'src/app/Service/user.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  email:String='';
-  password:String='';
+  email:String = '';
+  password:String = '';
   userFound:boolean=false;
+  user:User=new User();
+  bol:boolean = false;
   constructor(private userService: UserService, private router:Router) 
  { }
 
@@ -20,15 +23,24 @@ export class UserLoginComponent implements OnInit {
   loginUser()
   {
     this.userService.loginUser(this.email,this.password).subscribe((data:any)=>{
-      this.userFound=data;
-      console.log("I am here");
-      console.log(this.userFound);
-      if(this.userFound)
+      this.user=data;
+      if(this.user.email == this.email && this.user.password == this.password)
       {
-        this.router.navigateByUrl("userLogin");
-        console.log("redirecting");
-        this.router.navigateByUrl("");
+        localStorage.setItem('userId',this.user.userId.toString());
+        console.log(localStorage.getItem('userId'));    
+        this.router.navigateByUrl("userDash");
+      }
+      else
+      {
+        this.bol = true;
       }
     });
+   
+    
+  }
+
+  regUser()
+  {
+    this.router.navigateByUrl("userReg")
   }
 }
